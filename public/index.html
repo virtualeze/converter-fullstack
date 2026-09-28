@@ -1,0 +1,202 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#997DEE">
+    <title>Conversor de mídias</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <div class="stars" aria-hidden="true">
+      <span class="star star-1"></span>
+      <span class="star star-2"></span>
+      <span class="star star-3"></span>
+      <span class="star star-4"></span>
+      <span class="star star-5"></span>
+      <span class="star star-6"></span>
+      <span class="star star-7"></span>
+      <span class="star star-8"></span>
+      <span class="star star-9"></span>
+      <span class="star star-10"></span>
+      <span class="star star-11"></span>
+      <span class="star star-12"></span>
+    </div>
+
+    <main>
+
+      <section class="hero">
+        <h1>Conversor<br>de mídias</h1>
+
+        <nav class="tabs">
+          <button class="tab" data-target="web">Redes sociais</button>
+          <button class="tab active" data-target="audio">Áudio</button>
+          <button class="tab" data-target="image">Imagem</button>
+          <button class="tab" data-target="document">Documento</button>
+        </nav>
+
+      </section>
+
+      <section class="workspace">
+
+        <div class="panel panel-main">
+
+          <div class="mode-panel" id="web">
+
+            <div class="section-kicker">
+              <div class="section-icon">📱</div>
+              <div>
+                <h2>Redes sociais</h2>
+                <p>YouTube, TikTok, Instagram e outras plataformas suportadas.</p>
+              </div>  
+            </div>
+
+            <div class="url-row">
+              <input id="videoUrl" type="url" placeholder="Cole aqui a URL" autocomplete="off">
+            </div>
+
+            <div class="url-actions">
+              <button class="secondary" id="webAudioBtn">Baixar áudio MP3</button>
+              <button class="secondary" id="webVideoBtn">Baixar vídeo MP4</button>
+            </div>
+
+          </div>
+
+          <div class="mode-panel active" id="audio">
+
+            <div class="section-kicker">
+
+              <div class="section-icon">📼</div>
+                <div>
+                  <h2>Conversão de áudio</h2>
+                  <p>Envie MP4, MP3, WAV ou FLAC e escolha o formato final.</p>
+                </div>
+              </div>
+
+            <div class="field-grid single-field">
+
+              <div class="field">
+
+                <label for="audioOutputFormat">Formato final</label>
+
+                  <select id="audioOutputFormat" name="outputFormat" required>
+                    <option value="mp3">MP3</option>
+                    <option value="wav">WAV</option>
+                    <option value="flac">FLAC</option>
+                  </select>
+
+              </div>
+            </div>
+
+            <label class="dropzone" id="audioDrop" for="audioFile">
+              <input type="file" id="audioFile" accept=".mp4,.mp3,.wav,.flac">
+              <div class="drop-icon">⇧</div>
+              <div class="drop-title">Arraste o arquivo de áudio aqui</div>
+              <div class="drop-subtitle">ou clique para selecionar</div>
+              <div class="file-name" id="audioFileName">Nenhum arquivo selecionado</div>
+            </label>
+
+            <button class="primary" id="audioBtn">Converter áudio</button>
+
+          </div>
+
+          <div class="mode-panel" id="image">
+
+            <div class="section-kicker">
+              
+              <div class="section-icon">🖼️</div>
+              <div>
+                <h2>Conversão de imagem</h2>
+                <p>Transforme imagens para o formato desejado.</p>
+              </div>
+
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="imageFormat">Formato final</label>
+                <select id="imageFormat">
+                  <option value="jpeg">JPG</option>
+                  <option value="png">PNG</option>
+                  <option value="webp">WebP</option>
+                  <option value="avif">AVIF</option>
+                  <option value="tiff">TIFF</option>
+                  <option value="gif">GIF</option>
+                </select>
+              </div>
+            </div>
+
+            <label class="dropzone" id="imageDrop" for="imageFile">
+              <input type="file" id="imageFile" accept="image/*">
+              <div class="drop-icon">⇧</div>
+              <div class="drop-title">Arraste uma imagem aqui</div>
+              <div class="drop-subtitle">JPG, PNG, WebP, AVIF, TIFF e GIF</div>
+              <div class="file-name" id="imageFileName">Nenhum arquivo selecionado</div>
+            </label>
+
+            <button class="primary" id="imageBtn">Converter imagem</button>
+
+          </div>
+
+          <div class="mode-panel" id="document">
+            <div class="section-kicker">
+              <div class="section-icon">🗂️</div>
+              <div>
+                <h2>Conversão de documentos</h2>
+                <p>Converta PDF para DOCX ou DOCX para PDF.</p>
+              </div>
+            </div>
+
+            <label class="dropzone" id="docDrop" for="docFile">
+              <input type="file" id="docFile" accept=".pdf,application/pdf">
+              <div class="drop-icon">⇧</div>
+              <div class="drop-title">Arraste o PDF aqui</div>
+              <div class="drop-subtitle">PDF → DOCX</div>
+              <div class="file-name" id="docFileName">Nenhum arquivo selecionado</div>
+            </label>
+
+            <button class="primary" id="docBtn">Converter PDF para DOCX</button>
+
+            <label class="dropzone" id="docxDrop" for="docxFile">
+              <input type="file" id="docxFile" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+              <div class="drop-icon">⇧</div>
+              <div class="drop-title">Arraste o DOCX aqui</div>
+              <div class="drop-subtitle">DOCX → PDF</div>
+              <div class="file-name" id="docxFileName">Nenhum arquivo selecionado</div>
+            </label>
+
+            <button class="primary" id="docxBtn">Converter DOCX para PDF</button>
+          </div>
+
+        </div>
+
+        <aside class="panel progress-side">
+          <div class="progress-head">Progresso</div>
+
+          <div class="progress-ring" id="progressRing">
+            <span class="progress-value" id="progressValue">0%</span>
+          </div>
+
+          <div class="progress-status-stack">
+            <div class="progress-sub" id="progressStatus">Aguardando novo arquivo</div>
+            <div class="progress-file" id="progressFile"></div>
+          </div>
+
+        </aside>
+        
+      </section>
+    </main>
+
+    <footer>
+      <span>⌘ Conversor de mídias</span>
+      <span>Projeto de portfólio</span>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

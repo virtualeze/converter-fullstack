@@ -1,0 +1,12 @@
+node_modules/
+npm-debug.log*
+.git/
+.gitignore
+.env
+uploads/*
+!uploads/.gitkeep
+outputs/*
+!outputs/.gitkeep
+tools/yt-dlp.exe
+iniciar.bat
+setup-ytdlp.bat
